@@ -17,7 +17,10 @@ const TabNav = createBottomTabNavigator();
 export default function App() {
   return (
       <NavigationContainer>
-        <TabNav.Navigator screenOptions = {{headerShown: false}}>
+        <TabNav.Navigator
+            screenOptions = {{headerShown: false}}
+
+        >
           <TabNav.Screen name="Home" component={HomeScreen}/>
           <TabNav.Screen name="FAQScreen" component={SearchScreen}/>
           <TabNav.Screen name="HelpScreen" component={HelpScreen}/>
