@@ -9,6 +9,8 @@ import HomeScreen from "./src/screens/HomeScreen";
 import FAQScreen from "./src/screens/FAQScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
 import HomeNavigation from "./src/navigation/HomeNavigation";
+import SearchScreen from "./src/screens/SearchScreen";
+import HelpScreen from "./src/screens/HelpScreen";
 
 const TabNav = createBottomTabNavigator();
 
@@ -16,9 +18,9 @@ export default function App() {
   return (
       <NavigationContainer>
         <TabNav.Navigator screenOptions = {{headerShown: false}}>
-
           <TabNav.Screen name="Home" component={HomeScreen}/>
-          <TabNav.Screen name="FAQScreen" component={FAQScreen}/>
+          <TabNav.Screen name="FAQScreen" component={SearchScreen}/>
+          <TabNav.Screen name="HelpScreen" component={HelpScreen}/>
           <TabNav.Screen name="SettingsScreen" component={SettingsScreen}/>
         </TabNav.Navigator>
       </NavigationContainer>

@@ -1,4 +1,5 @@
 import {Button, Text, View } from "react-native";
+import {useEffect} from "react";
 
 export default function Screen1({route, navigation}) {
     return (

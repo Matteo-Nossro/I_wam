@@ -5,7 +5,7 @@ import HomeNavigation from "../navigation/HomeNavigation";
 
 export default function HomeScreen() {
     return (
-        <View style= {{flex:1, backgroundColor:'#f0f'}}>
+        <View style= {{flex:1}}>
             <HomeNavigation/>
             <Text>HomeScreen</Text>
         </View>
