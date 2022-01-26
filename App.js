@@ -22,7 +22,7 @@ export default function App() {
 
         >
           <TabNav.Screen name="Home" component={HomeScreen}/>
-          <TabNav.Screen name="FAQScreen" component={SearchScreen}/>
+          <TabNav.Screen name="SearchScreen" component={SearchScreen}/>
           <TabNav.Screen name="HelpScreen" component={HelpScreen}/>
           <TabNav.Screen name="SettingsScreen" component={SettingsScreen}/>
         </TabNav.Navigator>
