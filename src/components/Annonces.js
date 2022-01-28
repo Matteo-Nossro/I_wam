@@ -2,7 +2,7 @@ import { StyleSheet, Pressable, Text } from 'react-native';
 
 export default function MonAnnonce(props) {
     return (
-        <Pressable>
+        <Pressable style={styles.btnAnnonce}>
             <Text style={styles.title}>{props.user}</Text>
             <Text style={styles.description}>{props.description}</Text>
         </Pressable>
@@ -12,9 +12,10 @@ export default function MonAnnonce(props) {
 const styles = StyleSheet.create({
     btnAnnonce: {
         width: '80%',
+        marginBottom: '20px',
         color: '#000',
         backgroundColor: '#fff',
-        borderColor: '#000',
+        borderRadius: '8px'
     },
 
     title: {

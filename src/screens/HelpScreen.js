@@ -1,11 +1,16 @@
-import { Text, View } from "react-native";
-
-import MonAnnonce from "../components/Annonces";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function HelpScreen() {
     return (
-        <View style= {{flex:1, backgroundColor:'#fff'}}>
-            <MonAnnonce user="User1" description="Ceci est la description" ></MonAnnonce>
+        <View style= {styles.page}>
+            
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    page: {
+        flex: 1,
+        backgroundColor: '#BBCADA'
+    }
+})
