@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
-
-    <g id="Icon-2"  transform="translate(2.389 4.625)">
-      <circle id="Path" cx="12.333" cy="12.333" r="12.333" transform="translate(2.236 0)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.083"/>
-      <line id="Line" x1="6.706" y1="6.706" transform="translate(23.279 21.044)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.083"/>
-    </g>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="31.472" height="31.472" viewBox="0 0 31.472 31.472">
+  <g id="Icon" transform="translate(-0.694 1.542)">
+    <circle id="Path" cx="12.333" cy="12.333" r="12.333" transform="translate(2.236 0)" fill="none" stroke="#407bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.083"/>
+    <line id="Line" x1="6.706" y1="6.706" transform="translate(23.279 21.044)" fill="none" stroke="#407bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.083"/>
+  </g>
 </svg>
