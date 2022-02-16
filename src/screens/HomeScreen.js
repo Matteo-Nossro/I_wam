@@ -17,7 +17,6 @@ export default function HomeScreen() {
     )
 }
 
-
 const styles = StyleSheet.create({
     page: {
         flex: 1,
