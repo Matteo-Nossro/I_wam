@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 
 import MonAnnonce from "../components/Annonces";
+import MonEvenement from "../components/Evenements";
 import { wsc } from "../G";
 
 import { Header } from 'react-native-elements';
@@ -82,16 +83,12 @@ export default function HomeScreen() {
                 <View>
                     <Text style={styles.textTitre}>Évènements</Text>
                     <View style={styles.tuiles}>
-                        <MonAnnonce
+                        <MonEvenement
                             displayStar={false}
-                            user={user}
-                            description={desc}>  
-                        </MonAnnonce>
-                        <MonAnnonce 
-                            displayStar={false}
-                            user={user}
-                            description={desc}>  
-                        </MonAnnonce>
+                            title="Concert de rentrée 03.09.22"
+                            description="Très sympa … blablabla lorem ipsum c'est cool"
+                            place="Place de la Liberté">
+                        </MonEvenement>
                     </View>
                 </View>
             </ScrollView>
