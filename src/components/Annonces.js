@@ -1,11 +1,7 @@
-import {useState,  useEffect} from 'react';
 import { StyleSheet, Pressable, Text, Image, View } from 'react-native';
 import { wsc } from '../G';
-import {Api} from "../services/API";
 
 export default function MonAnnonce(props) {
-
-
     const displayStar = () => {
         if (props.displayStar == false) {
             return false
@@ -13,11 +9,11 @@ export default function MonAnnonce(props) {
         else {
             return (
                 <View style={styles.divStar}>
-                    <Image style={styles.star} source={require('../../assets/starFull.svg')}></Image>
-                    <Image style={styles.star} source={require('../../assets/starFull.svg')}></Image>
-                    <Image style={styles.star} source={require('../../assets/starFull.svg')}></Image>
-                    <Image style={styles.star} source={require('../../assets/starSemi.svg')}></Image>
-                    <Image style={styles.star} source={require('../../assets/starNone.svg')}></Image>
+                    <Image style={styles.star} source={require('../../assets/icons/android/4x/starxxxhdpi.png')}></Image>
+                    <Image style={styles.star} source={require('../../assets/icons/android/4x/starxxxhdpi.png')}></Image>
+                    <Image style={styles.star} source={require('../../assets/icons/android/4x/starxxxhdpi.png')}></Image>
+                    <Image style={styles.star} source={require('../../assets/icons/android/4x/star_middle_emptyxxxhdpi.png')}></Image>
+                    <Image style={styles.star} source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}></Image>
                 </View>
             )
         }
@@ -25,16 +21,15 @@ export default function MonAnnonce(props) {
 
     return (
         <Pressable style={styles.btnAnnonce} >
-
             <View style={styles.vueGlobalAnnonce}>
                 {/* Notes -> étoiles */}
-                    {displayStar()}
+                {displayStar()}
 
-                    {/* Utilisateur */}
-                    <Text style={styles.title}>{props.user}</Text>
+                {/* Utilisateur */}
+                <Text style={styles.title}>{props.user}</Text>
 
-                    {/* Description */}
-                    <Text style={styles.description}>{props.description}</Text>
+                {/* Description */}
+                <Text style={styles.description}>{props.description}</Text>
             </View>
         </Pressable>
     )

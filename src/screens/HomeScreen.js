@@ -1,18 +1,12 @@
-import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import MonAnnonce from "../components/Annonces";
 import MonEvenement from "../components/Evenements";
 import { wsc } from "../G";
 
-import { Header } from 'react-native-elements';
 import {useEffect, useState} from "react";
 import {Api} from "../services/API";
-// import { LinearGradient } from "react-native-linear-gradient";
-
-var desc = '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque neque,dapibus ut sem sed,"'
-desc += '"suscipit placerat dolor. Cras non nibh a lorem congue blandit. Cras nec placerat ligula. Morbi."'
-
-var user = "User1 :"
+import MonHeader from "../components/Header";
 
 export default function HomeScreen() {
 
@@ -35,21 +29,9 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.page}>
-            <Header
-            backgroundColor="#fff"
-            leftComponent={
-                <View>
-                    <Image style={styles.logoHeader} source={require('../../assets/icons/logo.svg')}></Image>
-                </View>
-            }
-            rightComponent={
-                <View>
-                    <Image style={styles.iconHeader} source={require('../../assets/messages.svg')}></Image>
-                </View>
-            }
-            />      
+            <MonHeader></MonHeader>     
 
-            <ScrollView style={styles.scrollView}>
+            <ScrollView>
                 {/* Les Avis */}
                 <View>
                     <Text style={styles.textTitre}>Mes Avis</Text>
@@ -70,13 +52,11 @@ export default function HomeScreen() {
                     <View style={styles.tuiles}>
                         {annonces.map((annonce) => (
                             <MonAnnonce
-
                                 displayStar={false }
                                 user={annonce.acf.title}
                                 description={annonce.acf.content}>
                             </MonAnnonce>
                         ))}
-
                     </View>
                 </View>
                 {/* Les Évènements */}
@@ -104,11 +84,11 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     page: {
         flex: 1,
-        backgroundColor: '#BBCADA',
+        backgroundColor: '#77B5FE',
     },
     logoHeader: {
         width: 160,
-        height: 45,
+        height: 50,
         marginLeft: wsc * 0.1
     },
     iconHeader: {
@@ -127,7 +107,6 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     tuiles: {
-        height: '100%',
         alignItems: 'center'
     }
 })

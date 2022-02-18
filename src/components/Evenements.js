@@ -1,13 +1,10 @@
-import {useState,  useEffect} from 'react';
 import { StyleSheet, Pressable, Text, Image, View } from 'react-native';
 import { wsc } from '../G';
-import {Api} from "../services/API";
 
 export default function MonEvenement(props) {
     return (
-        <Pressable style={styles.btnAnnonce} >
-
-            <View style={styles.vueGlobalAnnonce}>
+        <Pressable style={styles.btnEvent} >
+            <View style={styles.vueGlobalEvent}>
                 <View style={styles.apercuDesc}>
                     {/* Titre */}
                     <Text style={styles.title}>{props.title}</Text>
@@ -22,7 +19,7 @@ export default function MonEvenement(props) {
                     <Text style={styles.place}>{props.date}</Text>
                 </View>
                 <View style={styles.apercuEvent}>
-                    <Image style={styles.imgEvent} resizeMode='cover' source={props.imgUrl}></Image>
+                    <Image style={styles.imgEvent} resizeMode='cover' source={{uri: props.imgUrl}}></Image>
                 </View>
             </View>
         </Pressable>
@@ -30,17 +27,17 @@ export default function MonEvenement(props) {
 }
 
 const styles = StyleSheet.create({
-    btnAnnonce: {
+    btnEvent: {
         width: wsc * 0.8,
         marginBottom: 20,
         color: '#000',
         backgroundColor: '#fff',
-        borderWidth: 2,
+        borderWidth: 1,
         borderRadius: 8,
         borderColor: '#000'
     },
 
-    vueGlobalAnnonce: {
+    vueGlobalEvent: {
         display: 'flex',
         flexDirection: 'row'
     },
@@ -65,17 +62,17 @@ const styles = StyleSheet.create({
     },
 
     apercuDesc: {
-        width: wsc * 0.4,
+        flex: 1,
         marginLeft: 10
     },
 
     apercuEvent: {
-        width: wsc * 0.4
+        flex: 1,
+        position:"relative"
     },
 
     imgEvent: {
-        width: wsc * 0.37,
-        height: 150,
+        flex: 1,
         borderTopRightRadius: 8,
         borderBottomRightRadius: 8
     }

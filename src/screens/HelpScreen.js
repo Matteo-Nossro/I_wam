@@ -1,9 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+
+import MonHeader from "../components/Header";
 
 export default function HelpScreen() {
     return (
-        <View style= {styles.page}>
-            
+        <View style={styles.page}>
+            <MonHeader></MonHeader>
+            <Text>Écran d'aide</Text>
         </View>
     )
 }
@@ -11,6 +14,6 @@ export default function HelpScreen() {
 const styles = StyleSheet.create({
     page: {
         flex: 1,
-        backgroundColor: '#BBCADA'
+        backgroundColor: '#77B5FE',
     }
 })
