@@ -80,6 +80,20 @@ export const Api ={
 
     },
 
+    async getUsers()
+    {
+        const rawResponse = await fetch('https://dev-i-wam.pantheonsite.io/wp-json/wp/v2/users', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        });
+        const content = await rawResponse.json();
+        console.log(content);
+        return content;
+
+    },
 
 
 }
