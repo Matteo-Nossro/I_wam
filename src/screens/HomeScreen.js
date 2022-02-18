@@ -83,12 +83,16 @@ export default function HomeScreen() {
                 <View>
                     <Text style={styles.textTitre}>Évènements</Text>
                     <View style={styles.tuiles}>
+                    {events.map((event) => (
                         <MonEvenement
-                            displayStar={false}
-                            title="Concert de rentrée 03.09.22"
-                            description="Très sympa … blablabla lorem ipsum c'est cool"
-                            place="Place de la Liberté">
-                        </MonEvenement>
+                        title={event.acf.title}
+                        description={event.acf.description}
+                        place={event.acf.place}
+                        date={'Le ' +event.acf.date + ' à ' + event.acf.hours}
+                        imgUrl={ event.acf.picture.url}>
+                    </MonEvenement>
+                        ))}
+
                     </View>
                 </View>
             </ScrollView>

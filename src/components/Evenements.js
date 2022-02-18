@@ -17,9 +17,12 @@ export default function MonEvenement(props) {
 
                     {/* Lieu */}
                     <Text style={styles.place}>{props.place}</Text>
+
+                    {/* Date */}
+                    <Text style={styles.place}>{props.date}</Text>
                 </View>
                 <View style={styles.apercuEvent}>
-                    <Image style={styles.imgEvent} resizeMode='cover' source={require('../../assets/evenement.jpg')}></Image>
+                    <Image style={styles.imgEvent} resizeMode='cover' source={props.imgUrl}></Image>
                 </View>
             </View>
         </Pressable>
