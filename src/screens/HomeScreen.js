@@ -4,8 +4,8 @@ import MonAnnonce from "../components/Annonces";
 import MonEvenement from "../components/Evenements";
 import { wsc } from "../G";
 
-import {useEffect, useState} from "react";
-import {Api} from "../services/API";
+import { useEffect, useState } from "react";
+import { Api } from "../services/API";
 import MonHeader from "../components/Header";
 
 export default function HomeScreen() {

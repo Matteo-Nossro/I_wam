@@ -7,7 +7,9 @@ import { wsc } from "../G";
 var sIdentity = "Mathias Genelot";
 var sAge = "20";
 var sEtudes = "Licence DDIM / IUT Dijon"
-var sLangues = ""
+var sLangue1 = "Français"
+var sLangue2 = "Anglais"
+var sLangue3 = "Allemand"
 var sNote = "4.5"
 
 export default function SearchScreen() {
@@ -20,7 +22,9 @@ export default function SearchScreen() {
                     identity={sIdentity}
                     age={sAge}
                     etudes={sEtudes}
-                    langues={sLangues}
+                    langue1={sLangue1}
+                    langue2={sLangue2}
+                    langue3={sLangue3}
                     note={sNote}
                 >
                 </MonProfil>
@@ -28,7 +32,9 @@ export default function SearchScreen() {
                     identity={sIdentity}
                     age={sAge}
                     etudes={sEtudes}
-                    langues={sLangues}
+                    langue1={sLangue1}
+                    langue2={sLangue2}
+                    langue3={sLangue3}
                     note={sNote}
                 >
                 </MonProfil>
@@ -36,7 +42,9 @@ export default function SearchScreen() {
                     identity={sIdentity}
                     age={sAge}
                     etudes={sEtudes}
-                    langues={sLangues}
+                    langue1={sLangue1}
+                    langue2={sLangue2}
+                    langue3={sLangue3}
                     note={sNote}
                 >
                 </MonProfil>
@@ -44,7 +52,19 @@ export default function SearchScreen() {
                     identity={sIdentity}
                     age={sAge}
                     etudes={sEtudes}
-                    langues={sLangues}
+                    langue1={sLangue1}
+                    langue2={sLangue2}
+                    langue3={sLangue3}
+                    note={sNote}
+                >
+                </MonProfil>
+                <MonProfil
+                    identity={sIdentity}
+                    age={sAge}
+                    etudes={sEtudes}
+                    langue1={sLangue1}
+                    langue2={sLangue2}
+                    langue3={sLangue3}
                     note={sNote}
                 >
                 </MonProfil>
@@ -55,15 +75,15 @@ export default function SearchScreen() {
 
 const styles = StyleSheet.create({
     page: {
-        flexWrap: 'wrap',
         flex: 1,
         backgroundColor: '#77B5FE',
-        maxWidth: wsc
+        maxWidth: wsc 
     },
 
     tuilesProfil: {
-        flexWrap: 'wrap',
-        flex:1,
+        flex: 1,
+        // flexDirection: 'row',
+        flexWrap: 'wrap', 
         marginTop: 20,
         alignContent: 'space-around'        
     }

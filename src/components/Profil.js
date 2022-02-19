@@ -2,13 +2,39 @@ import { StyleSheet, Pressable, Text, Image, View } from 'react-native';
 import { wsc } from '../G';
 
 export default function MonProfil(props) {
+    // Gestion des langues parlées
+    const mesLangues = () => {
+        const tabLangues= []
+        switch(props.langue1, props.langue2, props.langue3) {
+            case 'Français':
+                tabLangues += '../../assets/icon/francais.png'
+                break;
+            
+            case 'Anglais':
+                tabLangues += '../../assets/icon/anglais.png'
+                break;
+        
+            case 'Allemand':
+                tabLangues += '../../assets/icon/allemand.png'
+                break;
+        
+            case 'Chinois':
+                tabLangues += '../../assets/icon/chinois.png'
+                break;
+        
+            default:
+                tabLangues += '';
+        }
+        return tabLangues
+    }
+
     return (
         <Pressable style={styles.btnProfil} >
             <View style={styles.vueGlobalAnnonce}>
                 <View style={{alignItems:'center'}}>
                     {/* Photo profil */}
                     <View style={styles.imgProfil}>
-                        <Image style={styles.imgEvent} resizeMode='cover' source={require('../../assets/profil-user.png')}></Image>
+                        <Image style={styles.imgEvent} source={require('../../assets/profil-user.png')}></Image>
                     </View>
 
                     {/* Identité */}
@@ -24,13 +50,13 @@ export default function MonProfil(props) {
                     {/* Langues */}
                     <View style={styles.languesetnote}>
                         <View style={styles.langues}>
-                            <Image style={styles.langue} resizeMode='cover' source={{uri: props.imgUrl}}></Image>
-                            <Image style={styles.langue} resizeMode='cover' source={{uri: props.imgUrl}}></Image>
-                            <Image style={styles.langue} resizeMode='cover' source={{uri: props.imgUrl}}></Image>
+                            <Image style={styles.langues} resizeMode='cover' source={mesLangues[1]}></Image>
+                            <Image style={styles.langues} resizeMode='cover' source={mesLangues[2]}></Image>
+                            <Image style={styles.langues} resizeMode='cover' source={mesLangues[3]}></Image>
                         </View>
                         <View style={styles.note}>
-                            <Text></Text>
-                            <Image style={styles.langue} resizeMode='cover' source={{uri: props.imgUrl}}></Image>
+                            <Text style={styles.textNote}>{props.note}</Text>
+                            <Image style={styles.starNote} resizeMode='cover' source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}></Image>
                         </View>
                     </View>
                 </View>                
@@ -52,10 +78,12 @@ const styles = StyleSheet.create({
     },
 
     vueGlobalAnnonce: {
+        padding: 10,
+        flex: 1
     },
 
     imgProfil: {
-        marginTop: 15
+        padding: 10
     },
 
     identity: {
@@ -69,11 +97,26 @@ const styles = StyleSheet.create({
     },
 
     languesetnote: {
+        marginTop: 58,
+        alignItems: 'flex-end'
     },
 
     langues: {
+        alignContent: 'flex-start'
     },
 
     note: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+
+    textNote: {
+        fontSize: 18
+    },
+
+    starNote: {
+        width: 19,
+        height: 19,
+        marginLeft: 5
     }
 })
