@@ -12,10 +12,12 @@ var sLangue2 = "Anglais"
 var sLangue3 = "Allemand"
 var sNote = "4.5"
 
-export default function SearchScreen() {
+export default function SearchScreen({route, navigation}) {
+    console.log("NAVIG", navigation)
+
     return (
         <View style={styles.page}>
-            <MonHeader></MonHeader>
+            <MonHeader refNavigation={navigation}></MonHeader>
             
             <ScrollView style={styles.scrollVue}>
                 <View style={styles.tuilesProfil}>

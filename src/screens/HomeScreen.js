@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Api } from "../services/API";
 import MonHeader from "../components/Header";
 
-export default function HomeScreen() {
+export default function HomeScreen({route, navigation}) {
 
     const [annonces, setAnnonces] = useState([]);
     const [avisUtilisateurs, setAvisUtilisateurs] = useState([]);
@@ -29,7 +29,7 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.page}>
-            <MonHeader></MonHeader>     
+            <MonHeader refNavigation={navigation}></MonHeader>  
 
             <ScrollView>
                 {/* Les Avis */}

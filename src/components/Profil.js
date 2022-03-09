@@ -67,7 +67,7 @@ export default function MonProfil(props) {
 
 const styles = StyleSheet.create({
     btnProfil: {
-        width: wsc * 0.3,
+        width: wsc * 0.40,
         height: 250,
         marginBottom: 20,
         color: '#000',
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     },
 
     languesetnote: {
-        marginTop: 58,
+        marginTop: 56,
         alignItems: 'flex-end'
     },
 

@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // import de composents
 import HomeScreen from "./src/screens/HomeScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
 import SearchScreen from "./src/screens/SearchScreen";
 import HelpScreen from "./src/screens/HelpScreen";
+import MessageScreen from './src/screens/MessageScreen';
 
 const TabNav = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
@@ -51,6 +54,7 @@ export default function App() {
           )
         }}       
         />
+        <TabNav.Screen name="MessagesScreen" component={MessageScreen}/>
       </TabNav.Navigator>
     </NavigationContainer>
   );
