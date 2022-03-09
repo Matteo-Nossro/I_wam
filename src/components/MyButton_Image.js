@@ -33,12 +33,11 @@ const styles = StyleSheet.create({
         width: 300,
         height: 90,
         borderRadius: 20,
-        marginTop: 25,
+        marginVertical: 15,
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        margin: 'auto'
+        justifyContent: 'flex-start'
     },
     imgCarre: {
         width: 50,
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         width: 'initial',
-        fontFamily: 'Noto Sans',
+        fontFamily: '',
         fontWeight: 'bold',
         fontSize: 20
     }
