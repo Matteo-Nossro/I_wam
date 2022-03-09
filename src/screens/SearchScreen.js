@@ -1,10 +1,10 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 
 import MonProfil from "../components/Profil";
 import MonHeader from "../components/Header";
 import { wsc } from "../G";
 
-var sIdentity = "Mathias Genelot";
+var sIdentity = "Ta daronee";
 var sAge = "20";
 var sEtudes = "Licence DDIM / IUT Dijon"
 var sLangue1 = "Français"
@@ -16,59 +16,120 @@ export default function SearchScreen() {
     return (
         <View style={styles.page}>
             <MonHeader></MonHeader>
-
-            <View style={styles.tuilesProfil}>
-                <MonProfil
-                    identity={sIdentity}
-                    age={sAge}
-                    etudes={sEtudes}
-                    langue1={sLangue1}
-                    langue2={sLangue2}
-                    langue3={sLangue3}
-                    note={sNote}
-                >
-                </MonProfil>
-                <MonProfil
-                    identity={sIdentity}
-                    age={sAge}
-                    etudes={sEtudes}
-                    langue1={sLangue1}
-                    langue2={sLangue2}
-                    langue3={sLangue3}
-                    note={sNote}
-                >
-                </MonProfil>
-                <MonProfil
-                    identity={sIdentity}
-                    age={sAge}
-                    etudes={sEtudes}
-                    langue1={sLangue1}
-                    langue2={sLangue2}
-                    langue3={sLangue3}
-                    note={sNote}
-                >
-                </MonProfil>
-                <MonProfil
-                    identity={sIdentity}
-                    age={sAge}
-                    etudes={sEtudes}
-                    langue1={sLangue1}
-                    langue2={sLangue2}
-                    langue3={sLangue3}
-                    note={sNote}
-                >
-                </MonProfil>
-                <MonProfil
-                    identity={sIdentity}
-                    age={sAge}
-                    etudes={sEtudes}
-                    langue1={sLangue1}
-                    langue2={sLangue2}
-                    langue3={sLangue3}
-                    note={sNote}
-                >
-                </MonProfil>
-            </View>
+            
+            <ScrollView style={styles.scrollVue}>
+                <View style={styles.tuilesProfil}>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil><MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                    <MonProfil
+                        identity={sIdentity}
+                        age={sAge}
+                        etudes={sEtudes}
+                        langue1={sLangue1}
+                        langue2={sLangue2}
+                        langue3={sLangue3}
+                        note={sNote}
+                    >
+                    </MonProfil>
+                </View>
+            </ScrollView>
         </View>
     )
 }
@@ -80,11 +141,14 @@ const styles = StyleSheet.create({
         maxWidth: wsc 
     },
 
+    scrollVue: {
+        flex: 1
+    },
+
     tuilesProfil: {
         flex: 1,
-        // flexDirection: 'row',
-        flexWrap: 'wrap', 
-        marginTop: 20,
-        alignContent: 'space-around'        
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginTop: 20  
     }
 })

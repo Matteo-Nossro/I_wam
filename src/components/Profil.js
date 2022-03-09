@@ -67,14 +67,15 @@ export default function MonProfil(props) {
 
 const styles = StyleSheet.create({
     btnProfil: {
-        width: wsc * 0.45,
+        width: wsc * 0.3,
         height: 250,
         marginBottom: 20,
         color: '#000',
         backgroundColor: '#fff',
         borderWidth: 1,
         borderRadius: 8,
-        borderColor: '#000'
+        borderColor: '#000',
+        marginHorizontal: 20
     },
 
     vueGlobalAnnonce: {
