@@ -20,7 +20,10 @@ export default function MyButton_Image(props) {
         link = require('../../assets/icons/android/4x/documentxxxhdpi.png') // Lien picto Documents
     };
     return (
-        <Pressable style={styles.button}>
+        <Pressable 
+            style={styles.button}
+            onPress={() => props.refNavigation.navigate(content)}
+        >
             <Image style={styles.imgCarre} source={link} resizeMode='contain'></Image>
             <Text style={styles.buttonText}>{content}</Text>
         </Pressable>

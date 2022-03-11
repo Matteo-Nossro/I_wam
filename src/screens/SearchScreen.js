@@ -13,8 +13,6 @@ var sLangue3 = "Allemand"
 var sNote = "4.5"
 
 export default function SearchScreen({route, navigation}) {
-    console.log("NAVIG", navigation)
-
     return (
         <View style={styles.page}>
             <MonHeader refNavigation={navigation}></MonHeader>

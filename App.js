@@ -1,14 +1,16 @@
 import { StyleSheet, View, Image } from 'react-native';
-import {NavigationContainer} from "@react-navigation/native";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// import de composents
+// import des écrans
 import HomeScreen from "./src/screens/HomeScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
 import SearchScreen from "./src/screens/SearchScreen";
 import HelpScreen from "./src/screens/HelpScreen";
 import MessageScreen from './src/screens/MessageScreen';
+
+import HelpNavigation from './src/navigation/HelpNavigation';
 
 const TabNav = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -38,13 +40,13 @@ export default function App() {
           )
         }}       
         />
-        <TabNav.Screen name="HelpScreen" component={HelpScreen} options={{
+        <TabNav.Screen name="HelpNavigation"  component={HelpNavigation} options={{
           tabBarIcon: ({focused}) => (
             <View>
               <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/helpsxxxhdpi.png')}></Image>
             </View>
           )
-        }}       
+        }}
         />
         <TabNav.Screen name="SettingsScreen" component={SettingsScreen} options={{
           tabBarIcon: ({focused}) => (
@@ -54,7 +56,7 @@ export default function App() {
           )
         }}       
         />
-        <TabNav.Screen name="MessagesScreen" component={MessageScreen}/>
+        {/* <TabNav.Screen name="MessageScreen" component={MessageScreen}/> */}
       </TabNav.Navigator>
     </NavigationContainer>
   );

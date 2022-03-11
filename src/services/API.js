@@ -7,7 +7,6 @@ export const Api ={
         const rawResponse = await fetch(API_LINK+'events/', {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
@@ -23,7 +22,6 @@ export const Api ={
         const rawResponse = await fetch(API_LINK+'annonce/', {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
@@ -40,7 +38,6 @@ export const Api ={
         const rawResponse = await fetch(API_LINK+'annonce/', {
                 method: 'POST',
                 headers: {
-                    'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
@@ -59,7 +56,6 @@ export const Api ={
         const rawResponse = await fetch(API_LINK+'avis_utilisateurs/', {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
@@ -75,7 +71,6 @@ export const Api ={
         const rawResponse = await fetch(API_LINK+'questions/', {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
@@ -91,8 +86,6 @@ export const Api ={
         const rawResponse = await fetch('https://dev-i-wam.pantheonsite.io/wp-json/acf/v3/users/', {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
-
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
@@ -108,7 +101,6 @@ export const Api ={
         const rawResponse = await fetch('https://dev-i-wam.pantheonsite.io/wp-json/acf/v3/users/'+id, {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                 'Accept': 'application/json',
                 Authorization : 'Basic base64encoded <matteo:matteo>'
             },
@@ -128,7 +120,6 @@ export const Api ={
 
             body: JSON.stringify(userInfos),
             headers: {
-                'Access-Control-Allow-Origin': 'https://dev-i-wam.pantheonsite.io',
                 'Accept': 'application/json',
                 'Authorization' : 'Basic base64encoded <matteo:matteo>'
             },
@@ -136,8 +127,4 @@ export const Api ={
         });
 
     },
-
-
-
 }
-

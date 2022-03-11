@@ -1,8 +1,6 @@
 import { Header } from 'react-native-elements';
 import { StyleSheet, Image, View, Pressable } from 'react-native';
 import { wsc } from '../G';
-import { MessageScreen } from '../screens/MessageScreen.js';
-import { NavigationContainer } from '@react-navigation/native';
 
 export default function MonHeader(props) {
     return (
@@ -18,7 +16,7 @@ export default function MonHeader(props) {
                     {/* Ouvre l'écran des messages */}
                     <Pressable
                         onPress={() =>
-                            props.refNavigation.navigate('MessagesScreen')
+                            props.refNavigation.navigate('MessageScreen')
                         }
                     >   
                         <Image style={styles.iconHeader} source={require('../../assets/icons/android/4x/messagexxxhdpi.png')}></Image>
