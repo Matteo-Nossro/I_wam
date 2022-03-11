@@ -1,12 +1,13 @@
 import { Text, View, StyleSheet } from "react-native";
 
 import MonHeader from "../components/Header";
+import Centre_Interet from "../components/Centre_Interet";
 
 export default function SettingsScreen() {
     return (
         <View style={styles.page}>
             <MonHeader></MonHeader>
-            <Text>Profil</Text>
+            <Centre_Interet type='1'></Centre_Interet>
         </View>
     )
 }
@@ -14,6 +15,6 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
     page: {
         flex: 1,
-        backgroundColor: '#77B5FE',
+        backgroundColor: '#BBCADA',
     }
 })  
