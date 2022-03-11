@@ -8,7 +8,7 @@ export default function MonHeader(props) {
             backgroundColor="#fff"
             leftComponent={
                 <View>
-                    <Image style={styles.logoHeader} source={require('../../assets/icons/android/4x/logoxxxhdpi.png')}></Image>
+                    <Image resizeMode='contain' style={styles.logoHeader} source={require('../../assets/icons/android/4x/logoxxxhdpi.png')}></Image>
                 </View>
             }
             rightComponent={
