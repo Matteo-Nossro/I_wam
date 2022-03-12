@@ -1,42 +1,18 @@
 import { StyleSheet, Pressable, Text, Image, View } from 'react-native';
 import { wsc } from '../G';
+import {Rating} from "react-native-elements";
 
 export default function MonProfil(props) {
-    // Gestion des langues parlées
-    const mesLangues = () => {
-        const tabLangues= []
-        switch(props.langue1, props.langue2, props.langue3) {
-            case 'Français':
-                tabLangues += '../../assets/icon/francais.png'
-                break;
-            
-            case 'Anglais':
-                tabLangues += '../../assets/icon/anglais.png'
-                break;
-        
-            case 'Allemand':
-                tabLangues += '../../assets/icon/allemand.png'
-                break;
-        
-            case 'Chinois':
-                tabLangues += '../../assets/icon/chinois.png'
-                break;
-        
-            default:
-                tabLangues += '';
-        }
-        return tabLangues
-    }
 
     return (
+
         <Pressable style={styles.btnProfil} >
             <View style={styles.vueGlobalAnnonce}>
                 <View style={{alignItems:'center'}}>
                     {/* Photo profil */}
-                    <View style={styles.imgProfil}>
-                        <Image style={styles.imgEvent} source={require('../../assets/profil-user.png')}></Image>
+                    <View>
+                        <Image style={styles.imgProfil} source={{uri:props.imgProf}}/>
                     </View>
-
                     {/* Identité */}
                     <Text style={styles.itentity}>{props.identity}</Text>
 
@@ -49,14 +25,29 @@ export default function MonProfil(props) {
                 <View>
                     {/* Langues */}
                     <View style={styles.languesetnote}>
-                        <View style={styles.langues}>
-                            <Image style={styles.langues} resizeMode='cover' source={mesLangues[1]}></Image>
-                            <Image style={styles.langues} resizeMode='cover' source={mesLangues[2]}></Image>
-                            <Image style={styles.langues} resizeMode='cover' source={mesLangues[3]}></Image>
-                        </View>
+                        {/*TODO : faire le chemin des images*/}
+                        {/*<View style={styles.langues}>*/}
+                        {/*    {props.langues.map((langue) => (*/}
+                        {/*        <Image style={styles.imgLangue} resizeMode='cover' source={require('../../assets/icons/'+langue+'.png')}/>*/}
+                        {/*    ))};*/}
+                        {/*</View>*/}
+
+
                         <View style={styles.note}>
                             <Text style={styles.textNote}>{props.note}</Text>
-                            <Image style={styles.starNote} resizeMode='cover' source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}></Image>
+                            <Rating
+                                type="custom"
+                                fractions={1}
+                                readonly
+                                ratingColor="#3f7cbd"
+                                ratingCount={1}
+                                imageSize={16}
+                                ratingImage={require('../../assets/icons/android/3x/star_emptyxxhdpi.png')}
+                                onFinishRating={props.note/5}
+                                startingValue={props.note/5}
+                                style={{ paddingVertical: 10 }}
+                                // tintColor="#3498db"
+                            />
                         </View>
                     </View>
                 </View>                
@@ -84,7 +75,10 @@ const styles = StyleSheet.create({
     },
 
     imgProfil: {
-        padding: 10
+        padding: 10,
+        width : 71,
+        height : 71,
+        borderRadius:50,
     },
 
     identity: {
@@ -105,7 +99,12 @@ const styles = StyleSheet.create({
     langues: {
         alignContent: 'flex-start'
     },
+    imgLangue:{
+        height : 25,
+        width : 25,
+        borderRadius:50
 
+    },
     note: {
         flexDirection: 'row',
         alignItems: 'center'

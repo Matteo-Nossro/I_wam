@@ -27,7 +27,7 @@ export default function App() {
         <TabNav.Screen name="Home" component={HomeScreen} options={{
           tabBarIcon: ({focused}) => (
             <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/homexxxhdpi.png')}></Image>
+              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/homexxxhdpi.png')}/>
             </View>
           )
         }}          
@@ -35,7 +35,7 @@ export default function App() {
         <TabNav.Screen name="SearchScreen" component={SearchScreen} options={{
           tabBarIcon: ({focused}) => (
             <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/searchxxxhdpi.png')}></Image>
+              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/searchxxxhdpi.png')}/>
             </View>
           )
         }}       
@@ -43,7 +43,7 @@ export default function App() {
         <TabNav.Screen name="HelpNavigation"  component={HelpNavigation} options={{
           tabBarIcon: ({focused}) => (
             <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/helpsxxxhdpi.png')}></Image>
+              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/helpsxxxhdpi.png')}/>
             </View>
           )
         }}
@@ -51,7 +51,7 @@ export default function App() {
         <TabNav.Screen name="SettingsScreen" component={SettingsScreen} options={{
           tabBarIcon: ({focused}) => (
             <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/profilxxxhdpi.png')}></Image>
+              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/profilxxxhdpi.png')}/>
             </View>
           )
         }}       

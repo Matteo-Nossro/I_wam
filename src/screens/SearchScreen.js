@@ -3,131 +3,38 @@ import { View, StyleSheet, ScrollView } from "react-native";
 import MonProfil from "../components/Profil";
 import MonHeader from "../components/Header";
 import { wsc } from "../G";
-
-var sIdentity = "Ta daronee";
-var sAge = "20";
-var sEtudes = "Licence DDIM / IUT Dijon"
-var sLangue1 = "Français"
-var sLangue2 = "Anglais"
-var sLangue3 = "Allemand"
-var sNote = "4.5"
+import {useEffect, useState} from "react";
+import {Api} from "../services/API";
+import MonAnnonce from "../components/Annonces";
 
 export default function SearchScreen({route, navigation}) {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        Api.getAllUsers().then(users =>{
+            setUsers(users);
+        });
+    },[]);
+
     return (
         <View style={styles.page}>
-            <MonHeader refNavigation={navigation}></MonHeader>
+            <MonHeader refNavigation={navigation}/>
             
             <ScrollView style={styles.scrollVue}>
                 <View style={styles.tuilesProfil}>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil><MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
-                    <MonProfil
-                        identity={sIdentity}
-                        age={sAge}
-                        etudes={sEtudes}
-                        langue1={sLangue1}
-                        langue2={sLangue2}
-                        langue3={sLangue3}
-                        note={sNote}
-                    >
-                    </MonProfil>
+
+                    {users.map((user,key) => (
+                        <MonProfil
+                            key={key}
+                            identity={user.acf.Prenom + ' ' + user.acf.nom}
+                            age={user.acf.age}
+                            etudes={user.acf.etude + ' / ' + user.acf.lieu}
+                            langues={user.acf.Langues}
+                            note={user.acf.FiveStar}
+                            imgProf={user.acf.imageprofil}
+                        />
+                    ))}
                 </View>
             </ScrollView>
         </View>

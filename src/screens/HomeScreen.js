@@ -29,7 +29,7 @@ export default function HomeScreen({route, navigation}) {
 
     return (
         <View style={styles.page}>
-            <MonHeader refNavigation={navigation}></MonHeader>  
+            <MonHeader refNavigation={navigation}/>
 
             <ScrollView>
                 {/* Les Avis */}
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     iconHeader: {
         width: 30,
         height: 30,
-        marginRight: 4,
+        // marginRight: 4,
         marginTop: 5,
         marginRight: wsc * 0.1
 
