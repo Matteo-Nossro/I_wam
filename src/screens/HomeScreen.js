@@ -52,7 +52,7 @@ export default function HomeScreen({route, navigation}) {
                     <View style={styles.tuiles}>
                         {annonces.map((annonce) => (
                             <MonAnnonce
-                                displayStar={false }
+                                displayStar={false}
                                 user={annonce.acf.title}
                                 description={annonce.acf.content}>
                             </MonAnnonce>
@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
     iconHeader: {
         width: 30,
         height: 30,
-        // marginRight: 4,
         marginTop: 5,
         marginRight: wsc * 0.1
 

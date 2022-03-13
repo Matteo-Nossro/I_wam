@@ -1,77 +1,21 @@
-import { StyleSheet, View, Image } from 'react-native';
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Icon } from 'react-native-elements';
+
 // import des écrans
-import HomeScreen from "./src/screens/HomeScreen";
-import SettingsScreen from "./src/screens/SettingsScreen";
-import SearchScreen from "./src/screens/SearchScreen";
-import HelpScreen from "./src/screens/HelpScreen";
+import ConnexionScreen from './src/screens/ConnexionScreen';
 import MessageScreen from './src/screens/MessageScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomNavigation from './src/navigation/BottomNavigation';
 
-import HelpNavigation from './src/navigation/HelpNavigation';
-
-const TabNav = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNav.Navigator 
-        screenOptions = {{
-          headerShown: false,
-          tabBarShowLabel: false       
-        }}
-      >
-        <TabNav.Screen name="Home" component={HomeScreen} options={{
-          tabBarIcon: ({focused}) => (
-            <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/homexxxhdpi.png')}/>
-            </View>
-          )
-        }}          
-        />
-        <TabNav.Screen name="SearchScreen" component={SearchScreen} options={{
-          tabBarIcon: ({focused}) => (
-            <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/searchxxxhdpi.png')}/>
-            </View>
-          )
-        }}       
-        />
-        <TabNav.Screen name="HelpNavigation"  component={HelpNavigation} options={{
-          tabBarIcon: ({focused}) => (
-            <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/helpsxxxhdpi.png')}/>
-            </View>
-          )
-        }}
-        />
-        <TabNav.Screen name="SettingsScreen" component={SettingsScreen} options={{
-          tabBarIcon: ({focused}) => (
-            <View>
-              <Image style={styles.iconTabBar} resizeMode='contain' source={require('./assets/icons/android/4x/profilxxxhdpi.png')}/>
-            </View>
-          )
-        }}       
-        />
-        {/* <TabNav.Screen name="MessageScreen" component={MessageScreen}/> */}
-      </TabNav.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="ConnexionScreen" component={ConnexionScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="HomeScreen" component={BottomNavigation} options={{headerShown: false}}/>
+        <Stack.Screen name="MessageScreen" component={MessageScreen}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  iconTabBar: {
-    width: 30,
-    height: 30
-  }
-});

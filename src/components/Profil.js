@@ -5,8 +5,8 @@ import {Rating} from "react-native-elements";
 export default function MonProfil(props) {
 
     return (
-
-        <Pressable style={styles.btnProfil} >
+        <Pressable style={styles.btnProfil} 
+            onPress>
             <View style={styles.vueGlobalAnnonce}>
                 <View style={{alignItems:'center'}}>
                     {/* Photo profil */}
@@ -45,8 +45,7 @@ export default function MonProfil(props) {
                                 ratingImage={require('../../assets/icons/android/3x/star_emptyxxhdpi.png')}
                                 onFinishRating={props.note/5}
                                 startingValue={props.note/5}
-                                style={{ paddingVertical: 10 }}
-                                // tintColor="#3498db"
+                                style={{ marginLeft: 5 }}
                             />
                         </View>
                     </View>
@@ -58,15 +57,15 @@ export default function MonProfil(props) {
 
 const styles = StyleSheet.create({
     btnProfil: {
-        width: wsc * 0.40,
+        width: wsc * 0.35,
         height: 250,
-        marginBottom: 20,
+        marginHorizontal: 15,
+        marginBottom: 15,
         color: '#000',
         backgroundColor: '#fff',
         borderWidth: 1,
         borderRadius: 8,
-        borderColor: '#000',
-        marginHorizontal: 20
+        borderColor: '#000'
     },
 
     vueGlobalAnnonce: {
@@ -99,12 +98,14 @@ const styles = StyleSheet.create({
     langues: {
         alignContent: 'flex-start'
     },
+
     imgLangue:{
         height : 25,
         width : 25,
         borderRadius:50
 
     },
+
     note: {
         flexDirection: 'row',
         alignItems: 'center'

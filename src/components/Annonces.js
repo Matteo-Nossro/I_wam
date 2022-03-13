@@ -11,26 +11,17 @@ export default function MonAnnonce(props) {
         else {
             return (
                 <View style={styles.divStar}>
-                    {/*<Image style={styles.star} source={require('../../assets/icons/android/4x/starxxxhdpi.png')}/>*/}
-                    {/*/!*<Image style={styles.star} source={require('../../assets/icons/android/4x/star_middle_emptyxxxhdpi.png')}/>*!/*/}
-                    {/*<Image style={styles.star} source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}/>*/}
-                    {/*<Image style={styles.star} source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}/>*/}
-                    {/*<Image style={styles.star} source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}/>*/}
-                    {/*<Image style={styles.star} source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}/>*/}
-                    {/*<Image style={styles.star} source={require('../../assets/icons/android/4x/star_emptyxxxhdpi.png')}/>*/}
-                    {/*<Text>★★★★</Text>*/}
                     <Rating
                         type="custom"
-                        fractions={1}
                         readonly
                         ratingColor="#3f7cbd"
-                        ratingBackgroundColor="#FFFFFFFF"
                         ratingCount={5}
-                        imageSize={16}
-                        ratingImage={ require('../../assets/icons/android/3x/star_emptyxxhdpi.png')}
+                        imageSize={23}
+                        ratingBackgroundColor="#fff"
+                        ratingImage={require('../../assets/icons/android/3x/star_emptyxxhdpi.png')}
                         onFinishRating={props.note}
                         startingValue={props.note}
-                        style={styles.star}                        // tintColor="#3498db"
+                        style={styles.star} 
                     />
                 </View>
             )
@@ -51,9 +42,6 @@ export default function MonAnnonce(props) {
             </View>
         </Pressable>
     )
-
-
-
 }
 
 const styles = StyleSheet.create({
@@ -74,18 +62,14 @@ const styles = StyleSheet.create({
     divStar: {
         display: 'flex',
         flexDirection: 'row',
-
     },
 
     star: {
-        // width: 22,
-        // height: 22,
-        marginRight: 5,
-        marginVertical: 6
+        marginTop: 10
     },
 
     title: {
-        marginTop:15,
+        marginTop: 12,
         fontSize: 15,
         marginVertical: 5,
         fontWeight: 'bold'
@@ -93,7 +77,6 @@ const styles = StyleSheet.create({
 
     description: {
         fontSize: 13,
-        marginTop: 2,
         marginBottom: 20
     }
 })
