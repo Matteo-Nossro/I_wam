@@ -3,19 +3,19 @@ import { Text, StyleSheet, Pressable, Image } from "react-native";
 export default function MyButton_Image(props) {
     let content = '';
     let link = '';
-    if (props.type == '1'){
+    if (props.type === '1'){
         content = 'Transport';
         link = require('../../assets/icons/android/4x/transportxxxhdpi.png') // Lien picto Transport
     };
-    if (props.type == '2'){
+    if (props.type === '2'){
         content = 'FAQ';
         link = require('../../assets/icons/android/4x/helpsxxxhdpi.png') // Lien picto FAQ
     };
-    if (props.type == '3'){
+    if (props.type === '3'){
         content = 'Loisirs';
         link = require('../../assets/icons/android/4x/hoobiesxxxhdpi.png') // Lien picto Loisirs
     };
-    if (props.type == '4'){
+    if (props.type === '4'){
         content = 'Documents';
         link = require('../../assets/icons/android/4x/documentxxxhdpi.png') // Lien picto Documents
     };
@@ -24,7 +24,7 @@ export default function MyButton_Image(props) {
             style={styles.button}
             onPress={() => props.refNavigation.navigate(content)}
         >
-            <Image style={styles.imgCarre} source={link} resizeMode='contain'></Image>
+            <Image style={styles.imgCarre} source={link} resizeMode='contain'/>
             <Text style={styles.buttonText}>{content}</Text>
         </Pressable>
     )

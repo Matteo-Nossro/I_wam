@@ -6,10 +6,16 @@ export default function MyButton(props) {
     if(props.backgroundColor) moreStyleButton.backgroundColor = props.backgroundColor;
     if(props.width) moreStyleButton.width = props.width;
     if(props.height) moreStyleButton.height = props.height;
-    if(props.content == '+'){
+    if(props.content === '+'){
         moreStyleButton.borderRadius = props.width;
         moreStyleText.fontWeight = 'bold';
     }
+
+    if(props.marginTop) moreStyleButton.marginTop=props.marginTop;
+    if(props.marginRight) moreStyleButton.marginRight=props.marginRight;
+    if(props.marginBottom) moreStyleButton.marginBottom=props.marginBottom;
+    if(props.marginLeft) moreStyleButton.marginLeft=props.marginLeft;
+
     if(props.color) moreStyleText.color = props.color;
     if(props.fontSize) moreStyleText.fontSize = props.fontSize;
     return (
@@ -24,9 +30,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
+
     buttonText: {
         textAlign: 'center',
+        fontWeight:"bold",
     }
 })

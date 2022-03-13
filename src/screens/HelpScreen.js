@@ -6,12 +6,12 @@ import MyButton_Image from "../components/MyButton_Image";
 export default function HelpScreen({route, navigation}) {
     return (
         <View style={styles.page}>
-            <MonHeader refNavigation={navigation}></MonHeader>
+            <MonHeader refNavigation={navigation}/>
             <View style={styles.vue}>
-                <MyButton_Image type="1" refNavigation={navigation}></MyButton_Image>
-                <MyButton_Image type="2" refNavigation={navigation}></MyButton_Image>
-                <MyButton_Image type="3" refNavigation={navigation}></MyButton_Image>
-                <MyButton_Image type="4" refNavigation={navigation}></MyButton_Image>
+                <MyButton_Image type="1" refNavigation={navigation}/>
+                <MyButton_Image type="2" refNavigation={navigation}/>
+                <MyButton_Image type="3" refNavigation={navigation}/>
+                <MyButton_Image type="4" refNavigation={navigation}/>
             </View>
         </View>
     )
