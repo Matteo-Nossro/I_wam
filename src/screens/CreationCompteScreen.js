@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, TextInput, Image } from "react-native";
 import MyButton from "../components/MyButton";
 import { hsc, wsc } from "../G";
 
-export default function ConnexionScreen({route, navigation}) {
+export default function CreationCompteScreen({route, navigation}) {
     return (
         <View style={styles.page}>
             <Image
@@ -13,34 +13,62 @@ export default function ConnexionScreen({route, navigation}) {
             <View style={styles.inputIdentity}>
                 <TextInput
                     style={styles.inputTextIdentity}
+                    placeholder="Prénom"
+                />
+                <TextInput
+                    style={styles.inputTextIdentity}
+                    placeholder="Nom"
+                />
+                <TextInput
+                    style={styles.inputTextIdentity}
                     placeholder="Email"
                 />
                 <TextInput
                     style={styles.inputTextIdentity}
                     placeholder="Mot de passe"
                 />
+                <TextInput
+                    style={styles.inputTextIdentity}
+                    placeholder="Confirmer votre mot de passe"
+                />
+                <TextInput
+                    style={styles.inputTextIdentity}
+                    placeholder="Études"
+                />
+                <TextInput
+                    style={styles.inputTextIdentity}
+                    placeholder="Ville"
+                />
+                <TextInput
+                    style={styles.inputTextIdentity}
+                    placeholder="Centres d'intérêts"
+                />
+                <TextInput
+                    style={styles.inputTextIdentity}
+                    placeholder="Langues parlées"
+                />
             </View>
             <View style={styles.boutons}>
                 <MyButton
                     refNavigation={navigation}
-                    screenNavigTo='CreationCompteScreen'
+                    screenNavigTo={"ConnexionScreen"}
                     backgroundColor='#FFFFFF'
-                    width = {144}
-                    height = {48}
-                    color = '#3E3E3E'
-                    fontSize ='16'
-                    content='Créer un compte'
+                    width={144}
+                    height={48}
+                    color='#3E3E3E'
+                    fontSize='16'
+                    content='Annuler'
                     marginRight={15}
                 />
                 <MyButton
                     refNavigation={navigation}
-                    screenNavigTo='HomeScreen'
+                    screenNavigTo={"ConnexionScreen"}
                     backgroundColor='#407BBC' 
-                    width = {144} 
-                    height = {48} 
-                    color = '#FCFCFC' 
-                    fontSize ='16' 
-                    content='Connexion'
+                    width={144} 
+                    height={48} 
+                    color='#FCFCFC' 
+                    fontSize='16' 
+                    content='Valider'
                 />
             </View>
         </View>
@@ -53,15 +81,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#77B5FE',
     },
 
-    image: {
-        width: wsc,
-        height: 450
-    },
-
     inputIdentity: {
-        marginBottom: 50,
         alignItems: 'center',
-        marginVertical: 60
+        marginTop: 20,
+        marginBottom: 40
     },
 
     inputTextIdentity: {

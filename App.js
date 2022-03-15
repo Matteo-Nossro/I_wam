@@ -5,6 +5,7 @@ import ConnexionScreen from './src/screens/ConnexionScreen';
 import MessageScreen from './src/screens/MessageScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigation from './src/navigation/BottomNavigation';
+import CreationCompteScreen from './src/screens/CreationCompteScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="ConnexionScreen" component={ConnexionScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="CreationCompteScreen" component={CreationCompteScreen} options={{headerShown: false}}/>
         <Stack.Screen name="HomeScreen" component={BottomNavigation} options={{headerShown: false}}/>
         <Stack.Screen name="MessageScreen" component={MessageScreen}/>
       </Stack.Navigator>

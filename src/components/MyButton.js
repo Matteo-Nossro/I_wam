@@ -19,7 +19,7 @@ export default function MyButton(props) {
     if (props.color) moreStyleText.color = props.color;
     if (props.fontSize) moreStyleText.fontSize = props.fontSize;
     return (
-        <Pressable style={[styles.button, moreStyleButton]} onPress={() => props.refNavigation.navigate("HomeScreen")}>
+        <Pressable style={[styles.button, moreStyleButton]} onPress={() => props.refNavigation.navigate(props.screenNavigTo)}>
             <Text style={[styles.buttonText, moreStyleText]}>{props.content}</Text>
         </Pressable>
     )
