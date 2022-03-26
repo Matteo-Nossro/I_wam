@@ -5,15 +5,16 @@ import { hsc, wsc } from "../G";
 export default function CreationCompteScreen({route, navigation}) {
     return (
         <View style={styles.page}>
-            <Image
-                style={styles.image}
-                source={require('../../assets/fond_connexion.png')}
-            >
-            </Image>
+            {/*<Image*/}
+            {/*    style={styles.image}*/}
+            {/*    source={require('../../assets/fond_connexion.png')}*/}
+            {/*>*/}
+            {/*</Image>*/}
             <View style={styles.inputIdentity}>
                 <TextInput
                     style={styles.inputTextIdentity}
                     placeholder="Prénom"
+                    autoFocus={true}
                 />
                 <TextInput
                     style={styles.inputTextIdentity}
@@ -22,12 +23,16 @@ export default function CreationCompteScreen({route, navigation}) {
                 <TextInput
                     style={styles.inputTextIdentity}
                     placeholder="Email"
+                    keyboardType='email-address'
+
                 />
                 <TextInput
+                    secureTextEntry={true}
                     style={styles.inputTextIdentity}
                     placeholder="Mot de passe"
                 />
                 <TextInput
+                    secureTextEntry={true}
                     style={styles.inputTextIdentity}
                     placeholder="Confirmer votre mot de passe"
                 />

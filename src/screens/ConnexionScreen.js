@@ -14,8 +14,11 @@ export default function ConnexionScreen({route, navigation}) {
                 <TextInput
                     style={styles.inputTextIdentity}
                     placeholder="Email"
+                    autoFocus={true}
+                    keyboardType='email-address'
                 />
                 <TextInput
+                    secureTextEntry={true}
                     style={styles.inputTextIdentity}
                     placeholder="Mot de passe"
                 />

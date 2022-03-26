@@ -77,6 +77,7 @@ export default function SettingsScreen() {
                 <View style={styles.input}>
                     <Image style={styles.img} source={require('../../assets/icons/android/4x/editxxxhdpi.png')}/>
                     <TextInput
+                        keyboardType='email-address'
                         style={styles.inputText}
                         underlineColorAndroid="transparent"
                         placeholder="Mail"
