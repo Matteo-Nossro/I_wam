@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TextInput, Image } from "react-native";
+ import { Text, View, StyleSheet, TextInput, Image } from "react-native";
 import MyButton from "../components/MyButton";
 import { hsc, wsc } from "../G";
 
@@ -61,7 +61,7 @@ export default function CreationCompteScreen({route, navigation}) {
                     width={144}
                     height={48}
                     color='#3E3E3E'
-                    fontSize='16'
+                    fontSize={16}
                     content='Annuler'
                     marginRight={15}
                 />
@@ -72,7 +72,7 @@ export default function CreationCompteScreen({route, navigation}) {
                     width={144} 
                     height={48} 
                     color='#FCFCFC' 
-                    fontSize='16' 
+                    fontSize={16}
                     content='Valider'
                 />
             </View>

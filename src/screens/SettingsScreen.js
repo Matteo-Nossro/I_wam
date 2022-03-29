@@ -12,7 +12,7 @@ import Langue from "../components/Langue";
 import {Avatar} from "react-native-elements";
 
 
-export default function SettingsScreen() {
+export default function SettingsScreen({route, navigation}) {
 
     const [userInfos, setUserInfos] = useState([]);
     const [selectedValue, setSelectedValue] = useState();
@@ -28,7 +28,7 @@ export default function SettingsScreen() {
     },[]);
     return (
         <View style={styles.page}>
-            <MonHeader/>
+            <MonHeader refNavigation={navigation}></MonHeader>
 
             <ScrollView style={styles.scrollingPage}>
 
@@ -157,7 +157,7 @@ export default function SettingsScreen() {
                         width = {144}
                         height = {48}
                         color = '#3E3E3E'
-                        fontSize ='16'
+                        fontSize ={16}
                         content='Déconnexion'
                         marginRight={15}
                     />

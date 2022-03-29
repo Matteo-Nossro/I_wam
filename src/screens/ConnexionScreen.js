@@ -28,10 +28,10 @@ export default function ConnexionScreen({route, navigation}) {
                     refNavigation={navigation}
                     screenNavigTo='CreationCompteScreen'
                     backgroundColor='#FFFFFF'
-                    width = {144}
-                    height = {48}
-                    color = '#3E3E3E'
-                    fontSize ='16'
+                    width={144}
+                    height={48}
+                    color='#3E3E3E'
+                    fontSize={16}
                     content='Créer un compte'
                     marginRight={15}
                 />
@@ -39,10 +39,10 @@ export default function ConnexionScreen({route, navigation}) {
                     refNavigation={navigation}
                     screenNavigTo='HomeScreen'
                     backgroundColor='#407BBC' 
-                    width = {144} 
-                    height = {48} 
-                    color = '#FCFCFC' 
-                    fontSize ='16' 
+                    width={144} 
+                    height={48} 
+                    color='#FCFCFC' 
+                    fontSize={16}
                     content='Connexion'
                 />
             </View>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     inputTextIdentity: {
         paddingStart: 13,
         flex: 1,
-        padding: 15,
+        padding: 20,
         marginVertical: 15,
         backgroundColor: '#fff',
         color: '#000000',
