@@ -3,7 +3,7 @@ import { Text, StyleSheet, Pressable, ToastAndroid, Alert } from "react-native";
 
 var prop = null;
 var bouton = null
-export default function MyButton(props) {
+export default function ButtonConnexion(props) {
 
     prop = props;
     
@@ -26,7 +26,6 @@ export default function MyButton(props) {
     if (props.fontSize) moreStyleText.fontSize = props.fontSize;
 
     return (
-        // <Pressable style={[styles.button, moreStyleButton]} onPress={() =>  props.refNavigation.navigate(props.screenNavigTo)}>
         <Pressable style={[styles.button, moreStyleButton]} onPress={() => OnclickButton() }>
             <Text style={[styles.buttonText, moreStyleText]}>{props.content}</Text>
         </Pressable>
@@ -45,7 +44,7 @@ function OnclickButton() {
             else {
                 //ToastAndroid.show("L'adresse mail est incorrect !", ToastAndroid.SHORT);
                 /* Pour afficher un toast sur ios et android :
-                https://docs.expo.dev/ui-programming/react-native-toast */
+                    https://docs.expo.dev/ui-programming/react-native-toast */
                 Alert.alert("Attention", "L'adresse mail est incorrect", [{text: 'OK'}]);
             }
         });

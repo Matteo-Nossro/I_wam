@@ -1,6 +1,8 @@
 import { Text, View, StyleSheet, TextInput, Image } from "react-native";
 import React, { useState } from "react";
 import MyButton from "../components/MyButton";
+import ButtonConnexion from "../components/ButtonConnexion";
+import ButtonCreationCompte from "../components/ButtonCreerCompte";
 import { hsc, wsc } from "../G";
 import { Api } from "../services/API";
 import { PrivateValueStore } from "@react-navigation/native";
@@ -15,11 +17,11 @@ export default function ConnexionScreen({route, navigation}) {
 
     return (
         <View style={styles.page}>
-            <Image
+            {/* <Image
                 style={styles.image}
                 source={require('../../assets/fond_connexion.png')}
             >
-            </Image>
+            </Image> */}
             <View style={styles.inputIdentity}>
                 <TextInput
                     id="emailInput"
@@ -38,9 +40,8 @@ export default function ConnexionScreen({route, navigation}) {
                 />
             </View>
             <View style={styles.boutons}>
-                <MyButton
+                <ButtonCreationCompte
                     name='CreationCompte'
-                    result={verifyIfUser()}
                     refNavigation={navigation}
                     screenNavigTo='CreationCompteScreen'
                     backgroundColor='#FFFFFF'
@@ -50,9 +51,11 @@ export default function ConnexionScreen({route, navigation}) {
                     fontSize={16}
                     content='Créer un compte'
                     marginRight={15}
-                />
-                <MyButton
+                >
+                </ButtonCreationCompte>
+                <ButtonConnexion
                     name='Connexion'
+                    result={verifyIfUser()}
                     refNavigation={navigation}
                     screenNavigTo='HomeScreen'
                     backgroundColor='#407BBC' 
@@ -61,16 +64,15 @@ export default function ConnexionScreen({route, navigation}) {
                     color='#FCFCFC' 
                     fontSize={16}
                     content='Connexion'
-                />
+                >
+                </ButtonConnexion>
             </View>
         </View>
     )
 }
 
 async function verifyIfUser() {
-    await Api.verifyIfUserExist(email, mdp).then(value =>{
-        return value; 
-    })
+        return Api.verifyIfUserExist(email, mdp); 
 }
 
 const styles = StyleSheet.create({
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
     inputTextIdentity: {
         paddingStart: 13,
         flex: 1,
-        padding: 20,
+        padding: 15,
         marginVertical: 15,
         backgroundColor: '#fff',
         color: '#000000',

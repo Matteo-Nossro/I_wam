@@ -3,7 +3,7 @@ import { Text, StyleSheet, Pressable, ToastAndroid, Alert } from "react-native";
 
 var prop = null;
 var bouton = null
-export default function MyButton(props) {
+export default function ButtonCreationCompte(props) {
 
     prop = props;
     
@@ -26,33 +26,10 @@ export default function MyButton(props) {
     if (props.fontSize) moreStyleText.fontSize = props.fontSize;
 
     return (
-        // <Pressable style={[styles.button, moreStyleButton]} onPress={() =>  props.refNavigation.navigate(props.screenNavigTo)}>
-        <Pressable style={[styles.button, moreStyleButton]} onPress={() => OnclickButton() }>
+        <Pressable style={[styles.button, moreStyleButton]} onPress={() =>  props.refNavigation.navigate(props.screenNavigTo)}>
             <Text style={[styles.buttonText, moreStyleText]}>{props.content}</Text>
         </Pressable>
     )
-}
-
-function OnclickButton() {
-    if (prop.name == 'Connexion') {
-        prop.result.then((value) => {
-            var obj = JSON.parse(value);
-            var length = Object.keys(obj).length;
-            console.log(length)
-            if (length > 0) {
-                prop.refNavigation.navigate(prop.screenNavigTo);
-            }
-            else {
-                //ToastAndroid.show("L'adresse mail est incorrect !", ToastAndroid.SHORT);
-                /* Pour afficher un toast sur ios et android :
-                https://docs.expo.dev/ui-programming/react-native-toast */
-                Alert.alert("Attention", "L'adresse mail est incorrect", [{text: 'OK'}]);
-            }
-        });
-    }
-    else {
-        prop.refNavigation.navigate(prop.screenNavigTo);
-    }   
 }
 
 const styles = StyleSheet.create({
