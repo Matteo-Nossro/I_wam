@@ -1,8 +1,18 @@
 import { Text, View, StyleSheet, TextInput, Image } from "react-native";
+import React, { useState } from "react";
 import MyButton from "../components/MyButton";
 import { hsc, wsc } from "../G";
+import { Api } from "../services/API";
+import { PrivateValueStore } from "@react-navigation/native";
+
+var [email, setEmail] = ""
+var [mdp, setMDP] = ""
 
 export default function ConnexionScreen({route, navigation}) {
+    [email, setEmail] = React.useState("");
+    [mdp, setMDP] = React.useState("");
+
+
     return (
         <View style={styles.page}>
             <Image
@@ -12,19 +22,25 @@ export default function ConnexionScreen({route, navigation}) {
             </Image>
             <View style={styles.inputIdentity}>
                 <TextInput
+                    id="emailInput"
+                    onChangeText={(email) => {setEmail(email)}}
                     style={styles.inputTextIdentity}
                     placeholder="Email"
                     autoFocus={true}
                     keyboardType='email-address'
                 />
                 <TextInput
+                    id="mdpInput"
                     secureTextEntry={true}
+                    onChangeText={(mdp) => {setMDP(mdp)}}
                     style={styles.inputTextIdentity}
                     placeholder="Mot de passe"
                 />
             </View>
             <View style={styles.boutons}>
                 <MyButton
+                    name='CreationCompte'
+                    result={verifyIfUser()}
                     refNavigation={navigation}
                     screenNavigTo='CreationCompteScreen'
                     backgroundColor='#FFFFFF'
@@ -36,6 +52,7 @@ export default function ConnexionScreen({route, navigation}) {
                     marginRight={15}
                 />
                 <MyButton
+                    name='Connexion'
                     refNavigation={navigation}
                     screenNavigTo='HomeScreen'
                     backgroundColor='#407BBC' 
@@ -48,6 +65,12 @@ export default function ConnexionScreen({route, navigation}) {
             </View>
         </View>
     )
+}
+
+async function verifyIfUser() {
+    await Api.verifyIfUserExist(email, mdp).then(value =>{
+        return value; 
+    })
 }
 
 const styles = StyleSheet.create({

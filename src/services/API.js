@@ -111,8 +111,7 @@ export const Api ={
 
     async setUserById(userInfos,id)
     {
-
-        const rawResponse = await fetch('https://dev-i-wam.pantheonsite.io/wp-json/acf/v3/users/'+id, {
+        const rawResponse = await fetch('https://dev-i-wam.pantheonsite.io/wp-json/acf/v3/users/' + id, {
             method: 'POST',
 
             body: JSON.stringify(userInfos),
@@ -125,7 +124,17 @@ export const Api ={
 
     },
 
-
-
+    async verifyIfUserExist(email, mdp) {
+        const rawResponse = await fetch('https://dev-i-wam.pantheonsite.io/wp-json/myplugin/v44/VerifyUser?email=' + email, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization' : 'Basic base64encoded <matteo:matteo>'
+            },
+        });
+        const content = await rawResponse.json();
+        console.log(content)
+        return content;
+    }
 }
 

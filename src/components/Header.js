@@ -16,7 +16,7 @@ export default function MonHeader(props) {
                     {/* Ouvre l'écran des messages */}
                     <Pressable
                         onPress={() =>
-                            props.refNavigation.navigate('MessageScreen')
+                            props.refNavigation.navigate('Messages')
                         }
                     >   
                         <Image style={styles.iconHeader} source={require('../../assets/icons/android/4x/messagexxxhdpi.png')}></Image>

@@ -16,7 +16,7 @@ export default function App() {
         <Stack.Screen name="ConnexionScreen" component={ConnexionScreen} options={{headerShown: false}}/>
         <Stack.Screen name="CreationCompteScreen" component={CreationCompteScreen} options={{headerShown: false}}/>
         <Stack.Screen name="HomeScreen" component={BottomNavigation} options={{headerShown: false}}/>
-        <Stack.Screen name="MessageScreen" component={MessageScreen}/>
+        <Stack.Screen name="Messages" component={MessageScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

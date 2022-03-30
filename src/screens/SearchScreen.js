@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView, RecyclerViewBackedScrollViewBase } from "react-native";
+import { View, StyleSheet, ScrollView, TextInput } from "react-native";
 
 import MonProfil from "../components/Profil";
 import MonHeader from "../components/Header";
@@ -22,6 +22,12 @@ export default function SearchScreen({route, navigation}) {
             <MonHeader refNavigation={navigation}/>
             
             <View style={{alignItems:'center'}}>
+                <TextInput
+                    style={styles.inputSearchProfil}
+                    placeholder="Rechercher un utilisateur"
+                    autoFocus={true}
+                />
+
                 <ScrollView style={styles.scrollVue}>
                     <View style={styles.tuilesProfil}>
                         {users.map((user,key) => (
@@ -47,6 +53,18 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#77B5FE',
         maxWidth: wsc
+    },
+
+    inputSearchProfil: {
+        paddingStart: 13,
+        padding: 15,
+        marginVertical: 10,
+        backgroundColor: '#fff',
+        color: '#000000',
+        opacity: 50,
+        borderRadius: 5,
+        fontWeight: 'bold',
+        width: wsc * 0.76,
     },
 
     scrollVue: {

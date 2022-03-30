@@ -5438,9 +5438,9 @@ expo-asset@~8.4.6:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
-expo-cli@^5.2.0:
+expo-cli@^5.3.0:
   version "5.3.0"
-  resolved "https://registry.npmjs.org/expo-cli/-/expo-cli-5.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/expo-cli/-/expo-cli-5.3.0.tgz#d3e6821e0c796aa113cf96111934b0c89b3ddcf9"
   integrity sha512-Oi5E+C3AtAHOwqBbL3GL1eQErfDnZGmIqbMjlDGp8WtELN0f+fdfWA4ZldCOSjnqsYg7hYQFgrZXjIXbjYsC9Q==
   dependencies:
     "@babel/runtime" "7.9.0"
