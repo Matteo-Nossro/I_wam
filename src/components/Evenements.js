@@ -3,7 +3,9 @@ import { wsc } from '../G';
 
 export default function MonEvenement(props) {
     return (
-        <Pressable style={styles.btnEvent} >
+        <Pressable style={styles.btnEvent}
+                   onPress={() => props.refNavigation.navigate(props.ScreenNavigateTo)}
+        >
             <View style={styles.vueGlobalEvent}>
                 <View style={styles.apercuDesc}>
                     {/* Titre */}

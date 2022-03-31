@@ -10,20 +10,24 @@ export default function MonAnnonce(props) {
         }
         else {
             return (
-                <View style={styles.divStar}>
-                    <Rating
-                        type="custom"
-                        readonly
-                        ratingColor="#3f7cbd"
-                        ratingCount={5}
-                        imageSize={23}
-                        ratingBackgroundColor="#fff"
-                        ratingImage={require('../../assets/icons/android/3x/star_emptyxxhdpi.png')}
-                        onFinishRating={props.note}
-                        startingValue={props.note}
-                        style={styles.star} 
-                    />
-                </View>
+                <Pressable
+                    onPress={() => props.refNavigation.navigate(props.ScreenNavigateTo)}
+                >
+                    <View style={styles.divStar}>
+                        <Rating
+                            type="custom"
+                            readonly
+                            ratingColor="#3f7cbd"
+                            ratingCount={5}
+                            imageSize={23}
+                            ratingBackgroundColor="#fff"
+                            ratingImage={require('../../assets/icons/android/3x/star_emptyxxhdpi.png')}
+                            onFinishRating={props.note}
+                            startingValue={props.note}
+                            style={styles.star}
+                        />
+                    </View>
+                </Pressable>
             )
         }
     }

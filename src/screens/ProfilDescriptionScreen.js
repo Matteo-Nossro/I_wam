@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TextInput, Image, ScrollView,Picker} from "react-native";
+import {Text, View, StyleSheet, TextInput, Image, ScrollView,Picker,Pressable} from "react-native";
 import {useEffect, useState} from "react";
 
 
@@ -12,17 +12,9 @@ import Langue from "../components/Langue";
 import {Avatar} from "react-native-elements";
 
 
-export default function SettingsScreen({route, navigation}) {
-
-    const [userInfos, setUserInfos] = useState([]);
-    const [selectedValue, setSelectedValue] = useState();
+export default function profilDescriptionScreen({route, navigation}) {
 
     useEffect(() => {
-
-        // Api.getUserById(id).then(userInfos =>{
-        //     setUserInfos(userInfos);
-        // });
-
 
 
     },[]);
@@ -42,58 +34,26 @@ export default function SettingsScreen({route, navigation}) {
                             title="Bj"
                             containerStyle={{ backgroundColor: 'grey' }}
                         >
-                            <Avatar.Accessory size={34} />
                         </Avatar>
                     </View>
 
                     <View style={styles.nomPrenom}>
-                        <Text style={styles.subtitleIdentity}>Prénom</Text>
+                        <Text style={styles.subtitleIdentity}>Jean DUPONT</Text>
 
-                        <View style={styles.inputIdentity}>
-                            <Image style={styles.img} source={require('../../assets/icons/android/4x/editxxxhdpi.png')}/>
-                            <TextInput
-                                style={styles.inputTextIdentity}
-                                underlineColorAndroid="transparent"
-                                placeholder="Prénom"
-                            />
-                        </View>
-
-                        <Text style={styles.subtitleIdentity}>Nom</Text>
-
-                        <View style={styles.inputIdentity}>
-                            <Image style={styles.img} source={require('../../assets/icons/android/4x/editxxxhdpi.png')}/>
-                            <TextInput
-                                style={styles.inputTextIdentity}
-                                underlineColorAndroid="transparent"
-                                placeholder="Nom"
-                            />
-                        </View>
+                        <Text style={styles.subtitleIdentity}>20 ans</Text>
                     </View>
-                </View>
-
-                <Text style={styles.subtitle}>Mail</Text>
-
-                <View style={styles.input}>
-                    <Image style={styles.img} source={require('../../assets/icons/android/4x/editxxxhdpi.png')}/>
-                    <TextInput
-                        keyboardType='email-address'
-                        style={styles.inputText}
-                        underlineColorAndroid="transparent"
-                        placeholder="Mail"
-                    />
+                    <Pressable
+                        style={styles.button}
+                        onPress={() => props.refNavigation.navigate(SearchScreen)}
+                    >
+                        <Image style={styles.imgCarre} source={require('../../assets/inferieur.png')} resizeMode='contain'/>
+                    </Pressable>
                 </View>
 
 
                 <Text style={styles.subtitle}>Etudes / Lieu</Text>
+                <Text style={styles.content}>LP DDIM / IUT DIJON</Text>
 
-                <View style={styles.input}>
-                <Image style={styles.img} source={require('../../assets/icons/android/4x/editxxxhdpi.png')}/>
-                <TextInput
-                    style={styles.inputText}
-                    underlineColorAndroid="transparent"
-                    placeholder="Etude / lieu"
-                />
-                </View>
                 <Text style={styles.subtitle}>Langues parlées</Text>
 
                 <View style={styles.langueContainer}>
@@ -116,34 +76,9 @@ export default function SettingsScreen({route, navigation}) {
                         width={49}
                         marginRight={8}
                     />
-                    <MyButton
-                        backgroundColor='#407BBC'
-                        width = {30}
-                        borderRadius={500}
-                        fontSize ={16}
-                        content='+'
-                        marginLeft={15}
-                        color = '#FFF'
-                    />
                 </View>
-
-                {/*TODO refaire cette merde de liste déroulante la je suis trop fatiguer*/}
-                {/*<Text style={styles.subtitle}>Rôle</Text>*/}
-                {/*<View >*/}
-                {/*    /!*<Image style={styles.img} source={require('../../assets/icons/android/4x/editxxxhdpi.png')}/>*!/*/}
-                {/*    <Picker*/}
-                {/*        selectedValue='utilisateur'*/}
-                {/*        style={styles.selectList}*/}
-                {/*        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}*/}
-
-                {/*    >*/}
-                {/*        <Picker.Item label="ambassadeur" value="ambassadeur" />*/}
-                {/*        <Picker.Item label="utilisateur" value="utilisateur" />*/}
-                {/*        <Picker.Item label="Administrateur" value="Administrateur" />*/}
-
-                {/*    </Picker>*/}
-                {/*</View>*/}
-
+                <Text style={styles.subtitle}>Rôle</Text>
+                <Text style={styles.content}>Ambassadeur</Text>
 
                 <Text style={styles.subtitle}>Centres d'intérets</Text>
                 <View style={styles.centreInteret}>
@@ -158,26 +93,6 @@ export default function SettingsScreen({route, navigation}) {
                     <Centre_Interet type='8'/>
                     <Centre_Interet type='9'/>
                     <Centre_Interet type='10'/>
-                </View>
-
-                <View style={styles.buttons}>
-                    <MyButton
-                        backgroundColor='#FFFFFF'
-                        width = {144}
-                        height = {48}
-                        color = '#3E3E3E'
-                        fontSize ={16}
-                        content='Déconnexion'
-                        marginRight={15}
-                    />
-                    <MyButton
-                        backgroundColor='#407BBC'
-                        width = {144}
-                        height = {48}
-                        color = '#FCFCFC'
-                        fontSize ='16'
-                        content='Enregistrer'
-                    />
                 </View>
             </ScrollView>
         </View>
@@ -273,7 +188,7 @@ const styles = StyleSheet.create({
     },
     identity:{
         display:"flex",
-        flexDirection:"row",
+        flexDirection:"row-reverse",
 
     },
     imageProfil:{
@@ -347,4 +262,4 @@ const styles = StyleSheet.create({
         marginLeft:30,
     }
 
-})  
+})

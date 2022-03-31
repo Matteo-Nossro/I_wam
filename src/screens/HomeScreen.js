@@ -28,6 +28,8 @@ export default function HomeScreen({route, navigation}) {
             setAvisUtilisateurs(avisUtilisateurs);
         });
 
+        test();
+
     },[]);
 
     return (
@@ -44,7 +46,11 @@ export default function HomeScreen({route, navigation}) {
                                 displayStar={true}
                                 note={avisUtilisateur.acf.stars}
                                 user={avisUtilisateur.acf.username}
-                                description={avisUtilisateur.acf.usercomment}>
+                                description={avisUtilisateur.acf.usercomment}
+                                ScreenNavigateTo={'ProfilDescriptionScreen'}
+                                refNavigation={navigation}
+
+                            >
                             </MonAnnonce>
                         ))}
                     </View>
@@ -122,7 +128,10 @@ export default function HomeScreen({route, navigation}) {
                         description={event.acf.description}
                         place={event.acf.place}
                         date={'Le ' +event.acf.date + ' à ' + event.acf.hours}
-                        imgUrl={ event.acf.picture.url}>
+                        imgUrl={ event.acf.picture.url}
+                        refNavigation={navigation}
+                        ScreenNavigateTo={'EventScreen'}
+                        >
                     </MonEvenement>
                         ))}
 
@@ -133,6 +142,19 @@ export default function HomeScreen({route, navigation}) {
             
     )
 }
+function test(){
+    Api.getUserById(77).then(user =>{
+        console.log('user',user);
+        user.acf.Langues.push('Indien');
+        Api.setUserById(user,77);
+
+    });
+
+}
+
+Api.getAnnonces().then(annonces =>{
+    setAnnonces(annonces);
+});
 
 const styles = StyleSheet.create({
     page: {

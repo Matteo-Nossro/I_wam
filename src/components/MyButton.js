@@ -13,7 +13,7 @@ export default function MyButton(props) {
     if (props.width) moreStyleButton.width = props.width;
     if (props.height) moreStyleButton.height = props.height;
     if (props.content === '+') {
-        moreStyleButton.borderRadius = props.width;
+        moreStyleButton.borderRadius = props.borderRadius;
         moreStyleText.fontWeight = 'bold';
     }
 
