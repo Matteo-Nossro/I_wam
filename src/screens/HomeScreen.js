@@ -11,7 +11,6 @@ import MyButton from "../components/MyButton";
 import MonHeader from "../components/Header";
 
 export default function HomeScreen({route, navigation}) {
-
     const [annonces, setAnnonces] = useState([]);
     const [avisUtilisateurs, setAvisUtilisateurs] = useState([]);
     const [events, setEvents] = useState([]);
@@ -27,9 +26,6 @@ export default function HomeScreen({route, navigation}) {
         Api.getAvisUtilisateurs().then(avisUtilisateurs =>{
             setAvisUtilisateurs(avisUtilisateurs);
         });
-
-        test();
-
     },[]);
 
     return (
@@ -43,6 +39,7 @@ export default function HomeScreen({route, navigation}) {
                     <View style={styles.tuiles} >
                         {avisUtilisateurs.map((avisUtilisateur) => (
                             <MonAnnonce
+                                id={avisUtilisateur.id}
                                 displayStar={true}
                                 note={avisUtilisateur.acf.stars}
                                 user={avisUtilisateur.acf.username}
@@ -142,19 +139,6 @@ export default function HomeScreen({route, navigation}) {
             
     )
 }
-function test(){
-    Api.getUserById(77).then(user =>{
-        console.log('user',user);
-        user.acf.Langues.push('Indien');
-        Api.setUserById(user,77);
-
-    });
-
-}
-
-Api.getAnnonces().then(annonces =>{
-    setAnnonces(annonces);
-});
 
 const styles = StyleSheet.create({
     page: {

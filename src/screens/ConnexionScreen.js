@@ -72,7 +72,8 @@ export default function ConnexionScreen({route, navigation}) {
 }
 
 async function verifyIfUser() {
-        return Api.verifyIfUserExist(email, mdp); 
+    console.log(email, mdp);
+    return Api.verifyIfUserExist(email, mdp); 
 }
 
 const styles = StyleSheet.create({
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
         padding: 15,
         marginVertical: 15,
         backgroundColor: '#fff',
-        color: '#000000',
+        color: '#000',
         opacity: 50,
         borderRadius: 5,
         fontWeight: 'bold',

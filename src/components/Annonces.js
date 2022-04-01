@@ -32,20 +32,22 @@ export default function MonAnnonce(props) {
         }
     }
 
-    return (
-        <Pressable style={styles.btnAnnonce} >
-            <View style={styles.vueGlobalAnnonce}>
-                {/* Notes -> étoiles */}
-                {displayStar()}
-
-                {/* Utilisateur */}
-                <Text style={styles.title}>{props.user}</Text>
-
-                {/* Description */}
-                <Text style={styles.description}>{props.description}</Text>
-            </View>
-        </Pressable>
-    )
+    if (props.id != 0) {
+        return (
+            <Pressable style={styles.btnAnnonce} >
+                <View style={styles.vueGlobalAnnonce}>
+                    {/* Notes -> étoiles */}
+                    {displayStar()}
+    
+                    {/* Utilisateur */}
+                    <Text style={styles.title}>{props.user}</Text>
+    
+                    {/* Description */}
+                    <Text style={styles.description}>{props.description}</Text>
+                </View>
+            </Pressable>
+        )
+        }
 }
 
 const styles = StyleSheet.create({
